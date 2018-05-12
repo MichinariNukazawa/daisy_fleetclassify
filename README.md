@@ -10,6 +10,13 @@ fleetclassify using NijiFlow[2] and MobileNet[1].
 
 # Usage
 ## Setup
+
+Install tensorflow.
+```
+sudo apt install python3-pip -y
+pip3 install tensorflow
+```
+
 Get this.  
 `git clone --depth=1 git@github.com:MichinariNukazawa/daisy_fleetclassify`  
 
