@@ -1,7 +1,7 @@
 daisy fleetclassify
 ====  
 Learned graph for classify 2D illustration, [Kancolle(戦艦コレクション 艦これ)]( http://www.dmm.com/netgame/feature/kancolle.html ) / [Azurlane(蒼海航路)]( http://www.azurlane.jp/ ).  
-with utility and twitter bot.  
+with utility and [twitter bot]( https://twitter.com/DFleetclassify ).  
 
 fleetclassify using NijiFlow[2] and MobileNet[1].  
 
