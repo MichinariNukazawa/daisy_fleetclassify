@@ -1,0 +1,35 @@
+
+.*
+!.gitkeep
+!.gitignore
+tags
+
+*~
+*.back
+# patch command backup file
+*.rej
+*.orig
+
+# cash
+*~
+
+# tmporary
+tmp/
+temp/
+gabage/
+work/
+log/
+
+# doxygen
+doxygen/
+
+*.txt
+*.log
+
+client.json
+
+/nijiflow
+/models
+/__pycache__
+classifier.py
+
