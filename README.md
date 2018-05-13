@@ -18,11 +18,11 @@ pip3 install tensorflow
 ```
 
 Get this.  
-`git clone --depth=1 git@github.com:MichinariNukazawa/daisy_fleetclassify`  
+`git clone --depth=1 https://github.com/MichinariNukazawa/daisy_fleetclassify`  
 
 Extract custom [nijiflow][].  
 `cd daisy_fleetclassify/`  
-`git clone --depth=1 git@github.com:MichinariNukazawa/nijiflow.git`  
+`git clone --depth=1 https://github.com/MichinariNukazawa/nijiflow.git`  
 `cp nijiflow/nijiflow/classifier.py .`  
 
 ## Run on CLI
