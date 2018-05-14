@@ -1,11 +1,27 @@
 daisy fleetclassify
-====  
+====
 Learned graph for classify 2D illustration, [Kancolle(戦艦コレクション 艦これ)]( http://www.dmm.com/netgame/feature/kancolle.html ) / [Azurlane(蒼海航路)]( http://www.azurlane.jp/ ).  
 with utility and [twitter bot]( https://twitter.com/DFleetclassify ).  
 
 fleetclassify using NijiFlow[2] and MobileNet[1].  
 
 ![twitter bot](document/image/20180512.png)  
+
+
+# Result
+Dataset:  
+6500x2 image.  
+Training:  
+K80 GPU, 48hour, 100000epoch.  
+
+```
+model.ckpt-110969
+
+eval/Precision[0.855130792]
+eval/Recall[0.86558044]
+eval/Accuracy[0.862]
+INFO:tensorflow:Finished evaluation at 2018-05-07-12:22:21
+```
 
 
 # Usage
