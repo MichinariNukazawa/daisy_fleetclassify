@@ -31,5 +31,6 @@ client.json
 /nijiflow
 /models
 /__pycache__
+/drive
 classifier.py
 
