@@ -8,6 +8,9 @@ import datetime
 import urllib.request
 import pprint
 pp = pprint.PrettyPrinter(indent=4)
+import argparse
+import sys
+
 
 import classifier
 
@@ -132,6 +135,11 @@ class Listener(tweepy.StreamListener):
 		return True
 
 def main():
+
+	parser = argparse.ArgumentParser()
+	parser.add_argument('--oneshot')
+	parsed = parser.parse_args()
+
 	# screen_name and access keys
 	f = open('client.json', 'r')
 	client_info = json.load(f)
@@ -143,7 +151,11 @@ def main():
 	api = tweepy.API(auth)
 
 	# tweeet when bot startup
-	api.update_status("Hello. : " + str(datetime.datetime.today()))
+	if parsed.oneshot:
+		api.update_status("{0}\n:{1}".format(str(parsed.oneshot), str(datetime.datetime.today())))
+		sys.exit()
+	else:
+		api.update_status("Hello. : " + str(datetime.datetime.today()))
 
 	# stream
 	listener = Listener()
