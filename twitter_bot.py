@@ -131,22 +131,25 @@ class Listener(tweepy.StreamListener):
 		print('Timeout error')
 		return True
 
+def main():
+	# screen_name and access keys
+	f = open('client.json', 'r')
+	client_info = json.load(f)
+	f.close()
 
-# screen_name and access keys
-f = open('client.json', 'r')
-client_info = json.load(f)
-f.close()
+	# auth
+	auth = tweepy.OAuthHandler(client_info["consumer_key"], client_info["consumer_secret"])
+	auth.set_access_token(client_info["access_token"], client_info["access_secret"])
+	api = tweepy.API(auth)
 
-# auth
-auth = tweepy.OAuthHandler(client_info["consumer_key"], client_info["consumer_secret"])
-auth.set_access_token(client_info["access_token"], client_info["access_secret"])
-api = tweepy.API(auth)
+	# tweeet when bot startup
+	api.update_status("Hello. : " + str(datetime.datetime.today()))
 
-# tweeet when bot startup
-api.update_status("Hello. : " + str(datetime.datetime.today()))
+	# stream
+	listener = Listener()
+	stream = tweepy.Stream(auth, listener)
+	stream.userstream()
 
-# stream
-listener = Listener()
-stream = tweepy.Stream(auth, listener)
-stream.userstream()
+if __name__ == '__main__':
+	main()
 
