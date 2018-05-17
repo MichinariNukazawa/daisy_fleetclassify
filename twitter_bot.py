@@ -16,6 +16,10 @@ import classifier
 
 LEARNED_MODEL_FILEPATH = "learned_model/nijinet_v1_1.0_224.graphdef.pb"
 
+client_info = None
+api = None
+
+
 def get_tweet_url_from_status(status):
 	return "https://twitter.com/{0}/status/{1}".format(status.user.screen_name, status.id)
 
@@ -142,12 +146,14 @@ def main():
 
 	# screen_name and access keys
 	f = open('client.json', 'r')
+	global client_info
 	client_info = json.load(f)
 	f.close()
 
 	# auth
 	auth = tweepy.OAuthHandler(client_info["consumer_key"], client_info["consumer_secret"])
 	auth.set_access_token(client_info["access_token"], client_info["access_secret"])
+	global api
 	api = tweepy.API(auth)
 
 	# tweeet when bot startup
